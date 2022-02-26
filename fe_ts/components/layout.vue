@@ -12,15 +12,10 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: 'layout',
-  props : ["showLoader"],
-  mounted() {
-
-  },
-  methods: {
-  }
+  props : ["showLoader"]
 }
 </script>
 <style>

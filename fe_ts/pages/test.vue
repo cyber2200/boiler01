@@ -3,7 +3,7 @@
     <div>
       <div>
         <div class="test_div">
-          DB Examples
+          DB Examples 11
         </div>
         <div class="test_div">
           <button v-on:click="db_test('mysql_test')">Mysql Test</button>
@@ -18,23 +18,28 @@
     </div>
   </Layout>
 </template>
-<script>
+<script lang="ts">
 import axios from 'axios'
 import Core from '../models/Core'
+import Vue from 'vue'
 
-export default {
+export default Vue.extend({
   name: "Test",
   data() {
-    return {
+    interface data_interface {
+      showLoader: boolean
+    }
+    let data: data_interface = {
       showLoader: false
     }
+    return data
   },
   methods : {
-    async db_test(call) {
+    async db_test(call: string) {
       this.showLoader = true
       const core = new Core()
       try {
-        let axios_res = await axios.post(core.getBaseUrl() + "/" + call, {})
+        let axios_res: any = await axios.post(core.getBaseUrl() + "/" + call, {})
         console.log(axios_res)
       } catch (err) {
         this.showLoader = false
@@ -43,7 +48,7 @@ export default {
       this.showLoader = false
     }
   }
-}
+})
 </script>
 <style>
 .test_div {

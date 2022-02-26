@@ -10,11 +10,6 @@
 
 <script>
 export default {
-  name: 'IndexPage',
-  methods : {
-    setLoading() {
-
-    }
-  }
+  name: 'IndexPage'
 }
 </script>
