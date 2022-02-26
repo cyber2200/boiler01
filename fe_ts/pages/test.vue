@@ -3,7 +3,7 @@
     <div>
       <div>
         <div class="test_div">
-          DB Examples 11
+          DB Examples
         </div>
         <div class="test_div">
           <button v-on:click="db_test('mysql_test')">Mysql Test</button>
