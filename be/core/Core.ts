@@ -3,6 +3,7 @@ import { CoreResponse } from "./CoreResponse";
 import { MongoDataLayer } from './classes/MongoDataLayer'
 import { PgDataLayer } from './classes/PgDataLayer'
 import { MysqlDataLayer } from './classes/MysqlDataLayer'
+import { FormTester } from './classes/FormTester'
 
 /*
 Mysql:
@@ -42,6 +43,13 @@ class Core {
       case '/pg_test':
         let pgDataLayer = new PgDataLayer()
         ret = await pgDataLayer.test()
+        coreResponse.setResponseText("OK")
+        coreResponse.setResponseData(ret)
+        res.json(coreResponse.getResponse())
+        break
+      case '/next_form_hanlder':
+        let formTester = new FormTester()
+        ret = await formTester.test()
         coreResponse.setResponseText("OK")
         coreResponse.setResponseData(ret)
         res.json(coreResponse.getResponse())
