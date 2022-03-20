@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nuxt-link to="/">Index</nuxt-link>  | <nuxt-link to="/test">Test</nuxt-link>
+    <nuxt-link to="/">Index</nuxt-link>  | <nuxt-link to="/test">Test</nuxt-link> | <nuxt-link to="/form_test">Form Test</nuxt-link>
   </div>
 </template>
 <script>
