@@ -14,14 +14,6 @@
         <div class="test_div">
           <button v-on:click="db_test('mongo_test')">Mongo Test</button>
         </div>
-        <div class="test_div">
-          <button v-on:click="vuex_test">vuex_test</button>
-        </div>
-        <div>
-          <div v-for="r in $store.getters['getGlobalData'].rs">
-            {{ r.name }}
-          </div>
-        </div>
       </div>
     </div>
   </Layout>
@@ -54,14 +46,6 @@ export default Vue.extend({
         console.log(err)
       }
       this.showLoader = false
-    },
-    async vuex_test() {
-      console.log("vuex_test")
-      let globalState = {
-        "rs" : [{"name" : "123"}, {"name" : "222"}, {"name" : "2232"}],
-        "test_txt" : "Test 123"
-      }
-      this.$store.commit('STORE_GLOBAL_STATE', globalState)
     }
   }
 })

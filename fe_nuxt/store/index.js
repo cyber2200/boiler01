@@ -1,15 +1,13 @@
 export const state = () => ({
-  globalData: {}
+  loadingState : false,
+  form01FullName : ""
 })
 
 export const mutations = {
-  STORE_GLOBAL_STATE(state, globalData) {
-    state.globalData = globalData
-  }
-}
-
-export const getters = {
-  getGlobalData(state) {
-    return state.globalData
+  updateForm01FullName(state, fullName) {
+    state.form01FullName = fullName
+  },
+  updateLoadingState(state, loadingState) {
+    state.loadingState = loadingStates
   }
 }

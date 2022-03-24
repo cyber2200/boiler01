@@ -2,8 +2,8 @@ import { Client } from 'pg'
 
 export class PgDataLayer {
     async test() {
-        // const delay: any = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
-        // await delay(1000)
+        const delay: any = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
+        await delay(1000)
         const client: any = new Client({
             user: 'zero21ops',
             host: 'localhost',
