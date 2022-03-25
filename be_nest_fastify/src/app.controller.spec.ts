@@ -14,9 +14,27 @@ describe('AppController', () => {
     appController = app.get<AppController>(AppController);
   });
 
-  describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+  describe('getTest', () => {
+    it('should return "Test"', () => {
+      expect(appController.getTest()).toBe('Test');
+    });
+  });
+
+  describe('mysql_test', () => {
+    it('should return object', async () => {
+      expect(await appController.mysql_test()).toMatchObject({data: {}});
+    });
+  });
+
+  describe('mongo_test', () => {
+    it('should return object', async () => {
+      expect(await appController.mysql_test()).toMatchObject({data: {}});
+    });
+  });
+
+  describe('pg_test', () => {
+    it('should return object', async () => {
+      expect(await appController.mysql_test()).toMatchObject({data: {}});
     });
   });
 });

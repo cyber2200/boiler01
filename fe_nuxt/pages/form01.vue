@@ -34,7 +34,6 @@ export default Vue.extend({
     form01FullName: {
       get () {
         return this.$store.state.form01FullName
-        return this.$store.test01.form01FullName
       },
       set (value) {
         this.$store.commit('updateForm01FullName', value)

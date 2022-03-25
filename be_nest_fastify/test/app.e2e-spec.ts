@@ -19,13 +19,34 @@ describe('AppController (e2e)', () => {
     return request(app.getHttpServer())
       .get('/')
       .expect(200)
-      .expect('Hello World!');
+      .expect('Test');
   });
 
   it('/getDbTest (POST)', () => {
     return request(app.getHttpServer())
       .post('/getDbTest')
       .expect(201)
-      .expect('{"res":"OK","data":[],"err":""}');
+      .expect('{"res":"OK"}');
+  });
+
+  it('/pg_test (POST)', () => {
+    return request(app.getHttpServer())
+      .post('/pg_test')
+      .expect(200)
+      .expect('Content-Type', 'application/json; charset=utf-8');
+  });
+
+  it('/mongo_test (POST)', () => {
+    return request(app.getHttpServer())
+      .post('/mongo_test')
+      .expect(200)
+      .expect('Content-Type', 'application/json; charset=utf-8');
+  });
+
+  it('/mysql_test (POST)', () => {
+    return request(app.getHttpServer())
+      .post('/mysql_test')
+      .expect(200)
+      .expect('Content-Type', 'application/json; charset=utf-8');
   });
 });
