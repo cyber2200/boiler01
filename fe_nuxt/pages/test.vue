@@ -39,7 +39,7 @@ export default Vue.extend({
       this.showLoader = true
       const core = new Core()
       try {
-        let axios_res: any = await axios.post(core.getBaseUrl() + "/" + call, {})
+        let axios_res: any = await axios.post(core.getBaseUrl() + "/" + call, {test: "123333"})
         console.log(axios_res)
       } catch (err) {
         this.showLoader = false

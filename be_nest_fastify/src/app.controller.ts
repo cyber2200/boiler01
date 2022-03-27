@@ -1,8 +1,8 @@
 import { Controller, Get, HttpCode, Post, Req, Request } from '@nestjs/common';
 import { AppService } from './app.service';
 import { MysqlDataLayer } from './models/MysqlDataLayer';
-import { PgDataLayer } from "./models/PgDataLayer";
-import {MongoDataLayer} from "./models/MongoDataLayer";
+import { PgDataLayer } from './models/PgDataLayer';
+import { MongoDataLayer } from './models/MongoDataLayer';
 
 @Controller()
 export class AppController {
@@ -34,7 +34,7 @@ export class AppController {
   @Post('/mysql_test')
   @HttpCode(200)
   async mysql_test() {
-    const mysqlDataLayer = new MysqlDataLayer();
+    const mysqlDataLayer: MysqlDataLayer = new MysqlDataLayer();
     const data = await mysqlDataLayer.test();
     return { res: 'OK', data, err: '' };
   }
@@ -42,16 +42,23 @@ export class AppController {
   @Post('/pg_test')
   @HttpCode(200)
   async pg_test() {
-    const pgDataLayer = new PgDataLayer();
+    const pgDataLayer: PgDataLayer = new PgDataLayer();
     const data = await pgDataLayer.test();
     return { res: 'OK', data, err: '' };
   }
 
   @Post('/mongo_test')
   @HttpCode(200)
-  async mongo_test() {
-    const mongoDataLayer = new MongoDataLayer();
+  async mongo_test(@Req() request: Request) {
+    console.log(request.body['test']);
+    const mongoDataLayer: MongoDataLayer = new MongoDataLayer();
     const data = await mongoDataLayer.test();
     return { res: 'OK', data, err: '' };
+  }
+
+  @Post('/getMicroserviceTest01')
+  @HttpCode(200)
+  async microserviceTest() {
+    return this.appService.getMicroserviceTest01();
   }
 }
