@@ -1,0 +1,4 @@
+zookeeper-server-start /opt/homebrew/etc/kafka/zookeeper.properties
+kafka-server-start /opt/homebrew/etc/kafka/server.properties
+kafka-topics --alter --bootstrap-server localhost:9092 -partitions 100 -topic queue02
+kafka-console-consumer --bootstrap-server localhost:9092 --topic queue02 --from-beginning
