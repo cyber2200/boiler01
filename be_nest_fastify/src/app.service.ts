@@ -12,6 +12,6 @@ export class AppService {
   }
 
   getMicroserviceTest01() {
-    return this.client01.send({ cmd: 'getMicroserviceTest01' }, {});
+    return this.client01.send({ cmd: 'getMicroserviceTest01' }, {t: "123"});
   }
 }
